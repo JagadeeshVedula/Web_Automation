@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "tests/**/*.ts",
+    "pages/**/*.ts",
+    "decorators/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

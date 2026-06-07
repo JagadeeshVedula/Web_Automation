@@ -1,0 +1,17 @@
+{
+  "name": "learning_typescript",
+  "version": "1.0.0",
+  "description": "Learning Typescript with playwright",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "playwright": "^1.60.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.2"
+  }
+}
