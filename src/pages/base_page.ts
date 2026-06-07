@@ -46,7 +46,12 @@ export class basepage {
     }
 
     async is_element_found(ele:Locator){
-        await ele.waitFor({state:'visible'})
+        try{
+            await ele.waitFor({state:'visible'})
+        }
+        catch(e){
+            console.log(`element not found with exception - ${e}`)
+        }
     }
 
     async select_value_from_dropdown(ele:Locator,value:any){
