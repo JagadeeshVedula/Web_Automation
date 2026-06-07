@@ -49,4 +49,14 @@ export class basepage {
         await ele.waitFor({state:'visible'})
     }
 
+    async select_value_from_dropdown(ele:Locator,value:any){
+        try{
+            await ele.selectOption(value)
+        }
+        catch(e){
+            console.log(`failed to select option from dropdown due to exception -${e}`)
+        }
+
+    }
+    
 }
