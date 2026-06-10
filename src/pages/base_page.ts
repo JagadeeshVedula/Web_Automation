@@ -7,13 +7,17 @@ export class basepage {
     constructor(page:Page){
         this.page=page
     }
+
+    async fetch_element(loc:string){
+        return this.page.locator(loc)
+    }
     async navigate(url:string){
         await this.page.goto(url, {
                 waitUntil: 'domcontentloaded',
                 timeout: 60000
             });
     }
-    async click_element(ele:Locator, retries=2,delay=500){
+    async click_element(ele:Locator, retries=3,delay=500){
         for (let attempt=1;attempt<=retries;attempt++){
             try{
                 await ele.click()
@@ -61,6 +65,23 @@ export class basepage {
         catch(e){
             console.log(`failed to select option from dropdown due to exception -${e}`)
         }
+
+    }
+
+    async pause_execution(){
+        await this.page.pause()
+    }
+
+    async hover_element(ele:Locator){
+        await ele.hover()
+
+    }
+
+    async get_text(ele:Locator){
+        let element_list = ele.allInnerTexts()
+        
+        return element_list
+
 
     }
     
