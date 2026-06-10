@@ -24,4 +24,18 @@ export class APICalls {
         return await response.json() as T;
 
     }
+
+
+    async Post_Data_To_API<T>(endpoint:string,data:Record<string,any>){
+        const url = this.base_url+endpoint
+        const body = new URLSearchParams(data);
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: body.toString()
+        });
+        return response.json() as Promise<T>;
+    }
 }

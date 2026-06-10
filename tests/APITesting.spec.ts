@@ -24,3 +24,10 @@ test('get all products using API GET request',async()=>{
     expect(firstProduct).toHaveProperty('name');
     console.log(`First product found: ${firstProduct.name}`);
 })
+
+test('post data to API',async()=>{
+    const API = new APICalls()
+    const postData = {'search_product': 'MEN T SHIRT'};
+    const response = await API.Post_Data_To_API("searchProduct", postData);
+    console.log(response);
+})
