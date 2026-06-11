@@ -13,10 +13,9 @@ export const logger = winston.createLogger({
     transports:[
         new winston.transports.Console(
             {
-                format:winston.format.combine(
-                    winston.format.colorize({all:true}),
+                format:
                     customFormat
-                )
+                
             }
         ),
         new winston.transports.File(
