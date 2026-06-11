@@ -1,6 +1,6 @@
-import { Page,Locator, expect, errors } from "@playwright/test"
-
-
+import { Page,Locator, expect, errors } from "@playwright/test";
+import { error } from "console";
+import path from 'path'
 export class basepage {
     private readonly page: Page;
 
@@ -54,7 +54,7 @@ export class basepage {
             await ele.waitFor({state:'visible'})
         }
         catch(e){
-            console.log(`element not found with exception - ${e}`)
+            throw new Error(`element not found with exception - ${e}`)
         }
     }
 
@@ -83,6 +83,19 @@ export class basepage {
         return element_list
 
 
+    }
+
+    async upload_file(ele:Locator,fileName:string | string[]){
+        if (Array.isArray(fileName)) {
+            const paths = fileName.map(file => path.join(process.cwd(), file));
+            await ele.setInputFiles(paths);
+        } else {
+            await ele.setInputFiles(path.join(process.cwd(), fileName));
+    }
+    }
+
+    async press_key(key:string){
+        await this.page.keyboard.press(key)
     }
     
 }
