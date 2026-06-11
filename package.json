@@ -8,10 +8,12 @@
   "main": "index.js",
   "scripts": {},
   "dependencies": {
-    "playwright": "^1.60.0"
+    "playwright": "^1.60.0",
+    "winston": "^3.19.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.2"
+    "@types/node": "^25.9.2",
+    "@types/winston": "^2.4.4"
   }
 }

@@ -1,5 +1,6 @@
 import {Page,Locator} from '@playwright/test'
 import { basepage } from './base_page'
+import { logger } from '../Utilties/Logger';
 
 type AccountCreationData = {
         Name:string,
@@ -98,7 +99,7 @@ export class signup extends basepage {
         await this.click_element(this.accountCreationcontinueButton)
         await this.is_element_found(this.DeleteAccountbutton)
         await this.click_element(this.DeleteAccountbutton)
-        console.warn(`Account deleted successfully to use the test again for sign up testing`)
+        logger.warn(`Account deleted successfully to use the test again for sign up testing`)
         
 
     }
