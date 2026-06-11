@@ -1,0 +1,16 @@
+2026-06-11 12:44:46 [INFO]: session created successfully and navigating to /
+2026-06-11 12:44:48 [INFO]: successfully navigated to /
+2026-06-11 12:44:48 [INFO]: trying to click element using locator - locator('//*[text()=" Signup / Login"]')
+2026-06-11 12:44:49 [INFO]: clicked successfully using locator locator('//*[text()=" Signup / Login"]')
+2026-06-11 12:44:49 [INFO]: trying to fill text-vedulajagadeesh1994@gmail.com in element using locator - locator('//input[@data-qa="login-email"]')
+2026-06-11 12:44:49 [INFO]: entered text-vedulajagadeesh1994@gmail.com successfully using locator locator('//input[@data-qa="login-email"]')
+2026-06-11 12:44:49 [INFO]: trying to fill text-vedulajagadeesh1994@gmail.com in element using locator - locator('//input[@data-qa="login-email"]')
+2026-06-11 12:44:50 [INFO]: entered text-vedulajagadeesh1994@gmail.com successfully using locator locator('//input[@data-qa="login-email"]')
+2026-06-11 12:44:50 [INFO]: trying to fill password-******** in element using locator - locator('//input[@type="password"]')
+2026-06-11 12:44:50 [INFO]: entered text-******** successfully using locator locator('//input[@type="password"]')
+2026-06-11 12:44:50 [INFO]: trying to fill password-******** in element using locator - locator('//input[@type="password"]')
+2026-06-11 12:44:50 [INFO]: entered text-******** successfully using locator locator('//input[@type="password"]')
+2026-06-11 12:44:50 [INFO]: trying to click element using locator - locator('//button[@data-qa="login-button"]')
+2026-06-11 12:44:51 [INFO]: clicked successfully using locator locator('//button[@data-qa="login-button"]')
+2026-06-11 12:44:51 [INFO]: waiting for element using locator - locator('//a[@href="/logout"]')
+2026-06-11 12:44:52 [INFO]: element found with locator - locator('//a[@href="/logout"]')
