@@ -27,6 +27,9 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    launchOptions: {
+      slowMo: 500, 
+    },
     baseURL: 'https://automationexercise.com/',
     headless: false,
     navigationTimeout: 60000,
