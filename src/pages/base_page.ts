@@ -1,5 +1,4 @@
 import { Page,Locator, expect, errors } from "@playwright/test";
-import { error } from "console";
 import path from 'path'
 export class basepage {
     private readonly page: Page;
@@ -63,7 +62,7 @@ export class basepage {
             await ele.selectOption(value)
         }
         catch(e){
-            console.log(`failed to select option from dropdown due to exception -${e}`)
+            throw new Error(`failed to select option from dropdown due to exception -${e}`)
         }
 
     }
@@ -73,21 +72,30 @@ export class basepage {
     }
 
     async hover_element(ele:Locator){
-        await ele.hover()
+        try{
+            await ele.hover()
+        }
+        catch(e){
+            throw new Error(`unable to hover on the element due to exception- ${e}`)
+        }
+        
 
     }
 
     async get_text(ele:Locator){
-        let element_list = ele.allInnerTexts()
-        
-        return element_list
-
+        try {
+            let text_list = ele.allInnerTexts()
+            return text_list
+        }
+        catch(e){
+            throw new Error(`unable to get text due to exception - ${e}`)
+        }
 
     }
 
     async upload_file(ele:Locator,fileName:string | string[]){
         if (Array.isArray(fileName)) {
-            const paths = fileName.map(file => path.join(process.cwd(), file));
+            const paths = fileName.map(file=>path.join(process.cwd(), file));
             await ele.setInputFiles(paths);
         } else {
             await ele.setInputFiles(path.join(process.cwd(), fileName));
