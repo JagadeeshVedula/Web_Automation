@@ -58,6 +58,24 @@ export class basepage {
             }    
     }
 
+    async fill_password(ele:Locator,text:any,retries=2,delay=500){
+        for (let attempt=1;attempt<=retries;attempt++){
+            try{
+                    logger.info(`trying to fill password-******** in element using locator - ${ele}`)
+                    await ele.fill(text)
+                    logger.info(`entered text-******** successfully using locator ${ele}`)
+                }
+                catch(e){
+                    logger.info(`entering text into element failed in attempt - ${attempt}`)
+                    if (attempt===retries){
+                        logger.error(`failed to enter text after ${retries} retries`)
+                        throw new Error(`failed to enter text after ${retries} retries`)
+                    }
+                    await this.page.waitForTimeout(delay)
+                }
+            }    
+    }
+
     async is_element_found(ele:Locator){
         try{
             logger.info(`waiting for element using locator - ${ele}`)
@@ -65,8 +83,8 @@ export class basepage {
             logger.info(`element found with locator - ${ele}`)
         }
         catch(e){
-            logger.error(`element not found with exception - ${e}`)
-            throw new Error(`element not found with exception - ${e}`)
+            logger.error(`element-${ele} not found with exception - ${e}`)
+            throw new Error(`element-${ele} not found with exception - ${e}`)
         }
     }
 

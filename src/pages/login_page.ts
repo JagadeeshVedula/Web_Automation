@@ -22,7 +22,7 @@ export class loginPage extends basepage {
 
     async login_with_valid_cred(username:string,password:string){
         await this.fill_element(this.usernamefield,username);
-        await this.fill_element(this.passwordfield,password)
+        await this.fill_password(this.passwordfield,password)
         await this.click_element(this.submitbutton)
         await this.is_element_found(this.logoutbutton)
 
