@@ -72,7 +72,7 @@ export class signup extends basepage {
         await this.click_element(this.signUpButton)
         await this.is_element_found(this.SignupHeader)
         await this.click_element(this.MaleGenderRadioButton)
-        await this.fill_element(this.PasswordTextfield,userdata.Password)
+        await this.fill_password(this.PasswordTextfield,userdata.Password)
         let date = userdata.DOB.split('-')[0]
         let Month = userdata.DOB.split('-')[1]
         const Year = userdata.DOB.split('-')[2]
