@@ -31,7 +31,7 @@ export default defineConfig({
       slowMo: 100, 
     },
     baseURL: 'https://automationexercise.com/',
-    headless: true,
+    headless: false,
     navigationTimeout: 60000,
     actionTimeout: 30000,
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -46,9 +46,14 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'setup',
+      testMatch: /.*\.setup\.ts/,
     },
+    {
+      name: 'chromium',
+      dependencies: ['setup'],
+      // use: { ...devices['Desktop Chrome'] },
+    }
 
     // {
     //   name: 'firefox',
