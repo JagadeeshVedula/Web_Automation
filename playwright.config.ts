@@ -31,7 +31,7 @@ export default defineConfig({
       slowMo: 100, 
     },
     baseURL: 'https://automationexercise.com/',
-    headless: false,
+    headless: true,
     navigationTimeout: 60000,
     actionTimeout: 30000,
     /* Base URL to use in actions like `await page.goto('')`. */
