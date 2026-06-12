@@ -1,5 +1,7 @@
+import fs from 'fs'
+import path from 'path'
 import {test} from '../src/fixtures/basefixture'
-import testdata from '../Data/CreateAccount.json'
+const testdata = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'Data', 'CreateAccount.json'), 'utf-8'))
 
 test.describe("register",{tag:["@signup", "@regression"]},()=>{
     test.beforeEach("Open Browser and Navigate to signup page",async({Base,Login})=>

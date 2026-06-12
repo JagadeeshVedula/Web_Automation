@@ -1,6 +1,8 @@
-import {test,Expect} from '../src/fixtures/basefixture'
-import { expect } from 'playwright/test'
-import contactUsData from '../Data/ContactUsForm.json'
+import fs from 'fs'
+import path from 'path'
+import {test,expect} from '../src/fixtures/basefixture'
+// import { expect } from 'playwright/test'
+const contactUsData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'Data', 'ContactUsForm.json'), 'utf-8'))
 
 test.describe("Contact Us testing",{tag:["@contact", "@regression"]},()=>{
     test.beforeEach("Login to the application with valid credentials",async({Base,Login})=>{

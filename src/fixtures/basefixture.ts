@@ -31,4 +31,4 @@ export const test = base.extend<MyPageObjects>({
     }
 })
 
-export { Expect } from '@playwright/test'
+export { expect } from '@playwright/test'
