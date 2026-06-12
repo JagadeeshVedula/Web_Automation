@@ -4,9 +4,17 @@
   "description": "Learning Typescript with playwright",
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:regression": "playwright test --grep @regression",
+    "test:login": "playwright test --grep \"@login\""
+  },
   "dependencies": {
     "playwright": "^1.60.0",
     "winston": "^3.19.0"
