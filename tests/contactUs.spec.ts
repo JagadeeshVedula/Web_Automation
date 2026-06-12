@@ -4,11 +4,10 @@ import {test,expect} from '../src/fixtures/basefixture'
 // import { expect } from 'playwright/test'
 const contactUsData = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'Data', 'ContactUsForm.json'), 'utf-8'))
 
+test.use({ storageState: 'playwright/.auth/admin.json' });
 test.describe("Contact Us testing",{tag:["@contact", "@regression"]},()=>{
     test.beforeEach("Login to the application with valid credentials",async({Base,Login})=>{
         await Base.navigate('/')
-        await Login.click_on_sigin()
-        await Login.login_with_valid_cred("vedulajagadeesh1994@gmail.com","Yuvraj@12")
     })
 
     test("submit contact form with all details",async({page,Contact})=>{
